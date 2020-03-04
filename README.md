@@ -31,12 +31,12 @@ Todos los mensajes deben seguir el formato:
 * Responder el código de status HTTP adecuado.
 
 * En caso de éxito, retorne el usuario y los siguientes campos:
-  - id: id del usuario (puede ser lo que se genera por el banco de datos, pero sería más deseable un UUID).
-  - created: fecha de creación del usuario.
-  - modified: fecha de la última actualización de usuario.
-  - last_login: del último ingreso (en caso de nuevo usuario, va a coincidir con la fecha de creación)
-  - token: token de acceso de la API (puede ser UUID o JWT).
-  - isactive: Indica si el usuario sigue habilitado dentro del sistema.
+  - __id__: id del usuario (puede ser lo que se genera por el banco de datos, pero sería más deseable un UUID).
+  - __created__: fecha de creación del usuario.
+  - __modified__: fecha de la última actualización de usuario.
+  - __last_login__: del último ingreso (en caso de nuevo usuario, va a coincidir con la fecha de creación)
+  - __token__: token de acceso de la API (puede ser UUID o JWT).
+  - __is_active__: Indica si el usuario sigue habilitado dentro del sistema.
 
 * Si caso el correo conste en la base de datos, deberá retornar un error "El correo ya registrado".
 
