@@ -1,10 +1,10 @@
-package cl.dominio.poc.login;
+package cl.dominio.poc.user;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class LoginApplicationTests {
+class UserApplicationTests {
 
 	@Test
 	void contextLoads() {
