@@ -1,4 +1,4 @@
-# login-poc
+# USER-POC
 
 El proyecto es una prueba de concepto para la creación de usuarios.
 
