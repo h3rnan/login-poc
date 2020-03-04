@@ -11,9 +11,6 @@ Todos los mensajes deben seguir el formato:
 
 ## Registro
 
- 
-The project is a proof of concept for login with java 8, spring-boot, JWT and HSQLDB.
-
 * Ese endpoint deberá recibir un usuario con los campos "nombre", "correo", "contraseña", más un listado de objetos
 "teléfono", respetando el siguiente formato:
     ```json
