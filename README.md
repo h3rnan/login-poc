@@ -22,7 +22,7 @@ Todos los mensajes deben seguir el formato:
             {
                 "number": "1234567",
                 "citycode": "1",
-                "contrycode": "57"
+                "countrycode": "57"
             }
         ]
     }
