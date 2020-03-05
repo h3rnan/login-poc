@@ -3,6 +3,9 @@ package cl.dominio.poc.user.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -10,6 +13,10 @@ import javax.persistence.Table;
 @Entity
 @Table(name="PHONES")
 public class Phone {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "ID_USER", nullable = false)
@@ -29,6 +36,14 @@ public class Phone {
         this.phoneNumber = phoneNumber;
         this.cityCode = cityCode;
         this.countryCode = countryCode;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public User getUser() {
