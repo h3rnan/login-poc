@@ -1,12 +1,15 @@
 package cl.dominio.poc.user.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -41,15 +44,8 @@ public class User {
     @Column(name = "MODIFIED")
     private Date modified;
 
-    public User(String name, String email, String password, String token, Boolean active, Date lastLogin, Date modified) {
-        this.name = name;
-        this.email = email;
-        this.password = password;
-        this.token = token;
-        this.active = active;
-        this.lastLogin = lastLogin;
-        this.modified = modified;
-    }
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+    private List<Phone> phones;
 
     public UUID getId() {
         return id;
@@ -123,6 +119,14 @@ public class User {
         this.modified = modified;
     }
 
+    public List<Phone> getPhones() {
+        return phones;
+    }
+
+    public void setPhones(List<Phone> phones) {
+        this.phones = phones;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -135,6 +139,7 @@ public class User {
                 ", lastLogin=" + lastLogin +
                 ", created=" + created +
                 ", modified=" + modified +
+                ", phones=" + phones +
                 '}';
     }
 
